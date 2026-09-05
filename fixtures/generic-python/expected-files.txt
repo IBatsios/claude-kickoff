@@ -1,0 +1,25 @@
+# Files that must exist after running /kickoff on this fixture's intake.md in an empty directory.
+# Template set: generic. Host: Gitea at https://git.example.org, private. Dev database: localhost. Deploy: Docker on own server. Auth: yes. handoff_docs: true.
+docs/intake.md
+docs/PRD.md
+docs/ARCHITECTURE.md
+docs/DECISIONS.md
+docs/RUNBOOK.md
+docs/tasks/01-walking-skeleton.md
+docs/tasks/02-sign-in.md
+docs/tasks/03-record-a-use.md
+docs/tasks/04-see-the-low-list.md
+docs/tasks/05-record-a-delivery.md
+docs/tasks/06-deploy.md
+docs/tasks/07-definition-of-done.md
+docs/handoff-items/handoff-next-phase.md
+CLAUDE.md
+.env.example
+.gitignore
+# Must NOT exist: LICENSE (private), docker-compose.yml (localhost database), any source or package file.
+# Git: one commit on branch feat/initial-scaffold (first prefix from the intake's conventions, not the shipped default).
+# Runbook checks: Phase 0.1 uses tea with --url https://git.example.org; 0.2 renders the localhost createdb line for bash;
+#   0.4 has the Linux install pointer and the bash fallback scan; 0.7 backup-before-migration is present (no staging, db_backup_before_migrate true).
+# Task checks: 01 names the FastAPI initializer or says "confirm with the user"; no invented commands. 03 is the first slice needing the database in CI and carries the service-container note.
+# DECISIONS checks: rows for branch prefixes (differs from default) and handoff docs (differs from default), and for "must run on our own server".
+# PRD checks: "Unknown" list has 2.3, 4.3, 11.4; "Skipped" list has 7.1, 11.3, 11.5, 12.1, 13.2. Scope guard projects 7 tasks.

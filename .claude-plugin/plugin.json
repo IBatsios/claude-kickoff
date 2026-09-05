@@ -1,0 +1,10 @@
+{
+  "name": "kickoff",
+  "version": "0.1.0",
+  "description": "Turn an intake form into a Claude Code-ready project: PRD, architecture, decisions, a runbook, one file per task, CLAUDE.md, and .env.example. Run /kickoff in an empty directory.",
+  "author": {
+    "name": "Yanni Batsios"
+  },
+  "license": "MIT",
+  "keywords": ["kickoff", "intake", "prd", "runbook", "scaffold", "planning"]
+}

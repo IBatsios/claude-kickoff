@@ -1,0 +1,16 @@
+{
+  "name": "claude-kickoff",
+  "owner": {
+    "name": "Yanni Batsios"
+  },
+  "description": "kickoff: an intake form that becomes a Claude Code-ready project, with a runbook of what to do next.",
+  "plugins": [
+    {
+      "name": "kickoff",
+      "source": "./",
+      "description": "Run /kickoff in an empty directory. Fill a form, or hand it to a collaborator, and get a PRD, architecture, decisions, a runbook, and one file per task.",
+      "category": "planning",
+      "keywords": ["kickoff", "intake", "prd", "runbook", "scaffold"]
+    }
+  ]
+}
