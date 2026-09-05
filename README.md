@@ -7,7 +7,7 @@ It is built for the first hour of a project: the hour that usually goes to a bla
 ## Install
 
 ```
-/plugin marketplace add YOUR-GITHUB-USER/claude-kickoff
+/plugin marketplace add IBatsios/claude-kickoff
 /plugin install kickoff@claude-kickoff
 ```
 

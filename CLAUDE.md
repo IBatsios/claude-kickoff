@@ -34,4 +34,4 @@ docs/DESIGN.md, docs/question-bank.md, docs/handoff-items/
 
 ## Status snapshot (2026-09-05)
 
-Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold` in four commits. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. Not yet done: a run through `/kickoff` as typed rather than by an agent reading SKILL.md, the no-ECC smoke run, CI for this repo, the README's GitHub owner, the first live project. Two candidate findings are logged and unapplied.
+Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold` in four commits. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. Not yet done: a run through `/kickoff` as typed rather than by an agent reading SKILL.md, the no-ECC smoke run, CI for this repo, creating the GitHub repo under `IBatsios`, the first live project. Two candidate findings are logged and unapplied.

@@ -11,7 +11,7 @@
 - Every fixture has been run once by following `SKILL.md` literally, and re-run after the fixes. All three pass their expected-files lists. The runs found 24 template and skill defects, all fixed the same day. Each fixture directory holds a `run-2026-09-05.md` with the findings, the fixes, and the re-run result.
 - The runs were done by an agent following the skill in this session, not through an installed plugin. Nothing has yet been run through `/kickoff` as a user would type it.
 - Two candidate findings from the re-runs are logged and not applied: the uncovered-work rule turns a manual one-off import into a user story, and the scope guard counts stories rather than slices.
-- `README.md` still says `YOUR-GITHUB-USER` in the install line.
+- `README.md` names the GitHub owner, `IBatsios`. The `claude-kickoff` repo does not exist there yet.
 
 ## What to do next, in order
 
@@ -20,7 +20,7 @@
 3. **Smoke run without ECC and without a defaults file**: a profile with no `~/.claude/kickoff/defaults.yaml` and no `project-init` command anywhere. The runbook must have no ECC step and every task must read complete with no suggested-skills line. Use `fixtures/local-only`.
 4. **CI for this repo**: a GitHub Actions workflow that runs a markdown linter, validates the frontmatter of the blank form and the three fixtures against the key list in `reference/checks.md`, and checks that every path `SKILL.md` names exists. No model calls.
 5. **Hand-write this repo's own intake and docs** in the same shapes, as the reference example of the output. Optional; the fixture outputs already serve as examples and could be checked in under `fixtures/<name>/example/` instead.
-6. **Fill in the GitHub owner** in `README.md`, create the `claude-kickoff` repo on GitHub, push the branch, open the first pull request, tag `v0.1.0`, and add the version heading in `CHANGELOG.md`.
+6. **Create the `claude-kickoff` repo** under `IBatsios` on GitHub, push the branch, open the first pull request, tag `v0.1.0`, and add the version heading in `CHANGELOG.md`.
 7. First live run on Yanni's next real app.
 
 ## Things to watch for when running
