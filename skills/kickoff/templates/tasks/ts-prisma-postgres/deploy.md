@@ -12,7 +12,7 @@
 ## Steps, in order
 
 <!-- Vercel -->
-1. Connect the repository in the Vercel dashboard, or run `{{pm exec}} vercel link` in this directory. This is a human step: it needs the account.
+1. Connect the repository in the Vercel dashboard, or run `{{pm dlx}} vercel link` in this directory. This is a human step: it needs the account.
 2. Build command: `prisma generate && next build` (Next.js) or `prisma generate && tsc` (Express). Set it in the project settings.
 3. Set every variable from `.env.example` in the project's environment variables, with a production `DATABASE_URL` that is not the development database.
 4. Migrations on release: add `prisma migrate deploy` to the build command before the build, or run it from a release step.

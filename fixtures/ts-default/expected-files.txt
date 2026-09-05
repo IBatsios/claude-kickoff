@@ -7,12 +7,10 @@ docs/DECISIONS.md
 docs/RUNBOOK.md
 docs/tasks/01-walking-skeleton.md
 docs/tasks/02-sign-in.md
-docs/tasks/03-propose-a-book.md
-docs/tasks/04-vote-for-books.md
-docs/tasks/05-see-the-current-pick.md
-docs/tasks/06-close-the-vote.md
+docs/tasks/03-*.md through docs/tasks/06-*.md: four feature slices, one per must-have, in that order (propose, vote, current pick, close the vote); slugs may vary
 docs/tasks/07-deploy.md
 docs/tasks/08-definition-of-done.md
+# Task count check: exactly 8 files in docs/tasks/.
 CLAUDE.md
 .env.example
 .gitignore

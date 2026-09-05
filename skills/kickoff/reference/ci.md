@@ -51,6 +51,10 @@ Same file shape as GitHub Actions, at `.gitea/workflows/ci.yml`. `actions/checko
 
 No CI file. The skeleton's acceptance criteria say "tests pass locally" only, and the task notes that CI is set up by hand for this host.
 
+## When Playwright is in the tests
+
+The skeleton does not need it. The first slice that adds an end-to-end test adds a step before Test in the CI job: `{{pm bin}} playwright install --with-deps` (`pnpm playwright` / `npx playwright` / `yarn playwright` / `bunx playwright`). The feature-slice templates say so in their notes.
+
 ## When a database is needed in CI
 
 The `ts-prisma-postgres` skeleton test does not need a database: it tests a pure function or a health route. Keep it that way, so CI has no service to provision. A later slice that needs one adds a Postgres service container to the workflow, and the feature-slice template says how.

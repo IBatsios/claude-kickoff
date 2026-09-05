@@ -34,3 +34,6 @@
 ## Notes
 
 Keep the skeleton test free of the database so CI needs no service. The first slice that needs the database in CI adds a service container; the feature-slice tasks say how.
+
+<!-- Keep the next paragraph only when the most important path needs a signed-in user. -->
+The most important path needs a signed-in user and sign-in does not exist yet. Use one fixed placeholder identity, a constant in code and never a real account, and name it as such; the sign-in task replaces it.

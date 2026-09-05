@@ -11,7 +11,7 @@
 
 ## Steps, a vertical slice in this order
 
-1. Schema: add or change {{entities}} in `prisma/schema.prisma`, then `{{pm exec}} prisma migrate dev --name {{slug}}`.
+1. Schema: add or change {{entities}} in `prisma/schema.prisma`, then `{{pm bin}} prisma migrate dev --name {{slug}}`.
 2. Data access: `src/lib/{{entity}}.ts` with the functions this story needs, and a Vitest test for each written first.
 3. Interface: {{`src/app/api/{{resource}}/route.ts` and `src/app/{{path}}/page.tsx` / `src/routes/{{resource}}.ts`}}.
 4. Walk the story as the {{role}} would. {{When Playwright is chosen: add the end-to-end test at `e2e/{{slug}}.spec.ts`.}}
@@ -34,4 +34,4 @@
 ## Notes
 
 <!-- Keep only on the first slice that needs the database in CI. -->
-This is the first task that needs the database in CI. Add a service to the CI job: image `postgres:16`, environment `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` all set to `test`, port 5432, and `DATABASE_URL=postgresql://test:test@localhost:5432/test` in the job. Run `{{pm exec}} prisma migrate deploy` before the tests.
+This is the first task that needs the database in CI. Add a service to the CI job: image `postgres:16`, environment `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` all set to `test`, port 5432, and `DATABASE_URL=postgresql://test:test@localhost:5432/test` in the job. Run `{{pm bin}} prisma migrate deploy` before the tests. {{When Playwright is chosen and this is the first slice with an end-to-end test: add `{{pm bin}} playwright install --with-deps` before the test step.}}

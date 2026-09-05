@@ -1,0 +1,31 @@
+# Generated from docs/intake.md by kickoff v{{version}}. Edit the intake, not this file.
+# Builder: lines starting with "# Builder:" are instructions; remove them. Written to the project root as .gitignore. Keep the environment block always; keep only the stack block that applies, and the noise block.
+
+# Environment and secrets: never commit these
+.env
+.env.*
+!.env.example
+
+# Builder: TypeScript or JavaScript stacks.
+node_modules/
+.next/
+dist/
+build/
+coverage/
+
+# Builder: Python stacks.
+__pycache__/
+.venv/
+*.pyc
+
+# Builder: Go stacks.
+bin/
+
+# Builder: Rust stacks.
+target/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

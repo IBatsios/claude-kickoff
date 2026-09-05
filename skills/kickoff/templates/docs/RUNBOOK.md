@@ -37,7 +37,7 @@ Run `/project-init` in this directory and accept the plan it proposes.
 
 ### 0.6 Push and open the first {{pull request / merge request}}
 
-<!-- From the "After the push" section of reference/hosts.md. Local only: replace with one line saying there is no remote and Phase 1 can start now. -->
+<!-- From "The push" section of reference/hosts.md: the push command, then the open-a-PR line. This is the only place the runbook pushes. Local only: the one-line "no remote, Phase 1 can start now" note. -->
 
 <!-- When conventions.db_backup_before_migrate is true and environments lack staging, add: -->
 ### 0.7 Before every migration from now on

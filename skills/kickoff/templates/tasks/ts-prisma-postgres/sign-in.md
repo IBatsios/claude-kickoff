@@ -12,8 +12,8 @@
 ## Steps, in order
 
 1. Install Auth.js with the Prisma adapter: {{`{{pm add}} next-auth@beta @auth/prisma-adapter` / `{{pm add}} @auth/express @auth/prisma-adapter`}}.
-2. Schema: add the Auth.js models (`User`, `Account`, `Session`, `VerificationToken`) to `prisma/schema.prisma`, plus a `role` enum on `User` with the values {{roles from 3.2}}. Then `{{pm exec}} prisma migrate dev --name auth`.
-3. Secret: `{{pm exec}} auth secret` writes `AUTH_SECRET` to `.env`; add the placeholder to `.env.example`.
+2. Schema: add the Auth.js models (`User`, `Account`, `Session`, `VerificationToken`) to `prisma/schema.prisma`, plus a `role` enum on `User` with the values {{roles from 3.2}}. Then `{{pm bin}} prisma migrate dev --name auth`.
+3. Secret: `{{pm dlx}} auth secret` writes `AUTH_SECRET` to `.env`; add the placeholder to `.env.example`.
 4. Providers, one per method in {{features.auth_methods}}: OAuth providers take `{{PROVIDER}}_CLIENT_ID` and `{{PROVIDER}}_CLIENT_SECRET` from the provider's developer console; magic link takes an email sender and its key; email and password uses the Credentials provider with argon2 hashing (`{{pm add}} argon2`).
 5. Guard: {{`src/middleware.ts` matching every protected path / a middleware on every protected route}} that reads the session and enforces the role matrix from `docs/PRD.md`.
 6. Tests: a signed-out request to a protected {{page / route}} is redirected or refused; each role reaches exactly its allowed actions.

@@ -6,9 +6,9 @@ docs/ARCHITECTURE.md
 docs/DECISIONS.md
 docs/RUNBOOK.md
 docs/tasks/01-walking-skeleton.md
-docs/tasks/02-move-screenshots-by-month.md
-docs/tasks/03-dry-run.md
+docs/tasks/02-*.md and docs/tasks/03-*.md: two feature slices, one per must-have, in that order (move by month, dry run); slugs may vary
 docs/tasks/04-definition-of-done.md
+# Task count check: exactly 4 files in docs/tasks/.
 CLAUDE.md
 .env.example
 .gitignore
