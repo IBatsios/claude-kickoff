@@ -57,10 +57,10 @@ The commands above are identical in PowerShell, bash, zsh, and fish. Shell matte
 
 ## The push (step 0.6)
 
-`{{branch}}` is the branch the build created. Render this after the secrets gate, for every host except local only:
+The build committed on `main`. Render this after the secrets gate, for every host except local only:
 
 ```
-git push -u origin {{branch}}
+git push -u origin main
 ```
 
-Then one line telling the user to open the first pull request or merge request from `{{branch}}` to the default branch, using the host's word for it: pull request on GitHub and Gitea, merge request on GitLab. Local only: one line saying there is no remote and Phase 1 can start now.
+Then one line: the first pull request or merge request comes with Task 01, from its branch to `main`, using the host's word for it: pull request on GitHub and Gitea, merge request on GitLab. When `conventions.protect_default_branch` is true, one more line: protect `main` in the host's repository settings now that it exists. Local only: one line saying there is no remote and Phase 1 can start now.

@@ -14,9 +14,10 @@
 1. Create the app or project on {{deployment.target}}. <!-- The command or console path when known for this target; otherwise "confirm with the user". This is a human step when it needs an account. For "Docker on a server I control", the server's compose file is docker-compose.prod.yml; docker-compose.yml is the dev database's file when one exists. -->
 2. Set every variable from `.env.example` in the target's environment settings. Production secrets live in {{10.5, or "the target's environment settings"}}.
 3. Point the deployment at a production database, separate from the development one.
-4. Run migrations as part of each release, before the new version serves traffic.
-5. Deploy once from the default branch and walk "{{4.4}}" on the live URL.
-6. Write the deploy procedure into `README.md`.
+4. {{When deployment.domain is set: Attach the domain to the app on the target and create the DNS record it shows.}}
+5. Run migrations as part of each release, before the new version serves traffic.
+6. Deploy once from the default branch and walk "{{4.4}}" on the live URL.
+7. Write the deploy procedure into `README.md`.
 
 ## Acceptance criteria
 

@@ -24,7 +24,7 @@
 skills/kickoff/SKILL.md                        the skill: modes, walkthrough, confirm, build, regenerate
 skills/kickoff/reference/                      checks, hosts, dev-database, secrets-gate, ci, defaults
 skills/kickoff/templates/intake.md             the blank form
-skills/kickoff/templates/docs/                 PRD, ARCHITECTURE, DECISIONS, RUNBOOK, CLAUDE.md, env.example
+skills/kickoff/templates/docs/                 PRD, ARCHITECTURE, DECISIONS, RUNBOOK, CLAUDE.template.md, env.example, gitignore, handoff-next-phase
 skills/kickoff/templates/tasks/generic/        walking skeleton, feature slice, sign-in, deploy, definition of done
 skills/kickoff/templates/tasks/ts-prisma-postgres/   the first-class set (definition of done is shared from generic)
 skills/kickoff/templates/expected-files.md     what a build must produce
@@ -34,4 +34,4 @@ docs/DESIGN.md, docs/question-bank.md, docs/handoff-items/
 
 ## Status snapshot (2026-09-05)
 
-Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold`. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. The first run through `/kickoff` as typed is done: a full walkthrough in an empty directory, build, commit, and defaults file, logged in `fixtures/typed-run-2026-09-05.md` with eight findings. Not yet done: applying those findings and the two from the re-runs, the no-ECC smoke run, CI for this repo, creating the GitHub repo under `IBatsios`, the first live project.
+Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold`. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. The first run through `/kickoff` as typed is done: a full walkthrough in an empty directory, build, commit, and defaults file, logged in `fixtures/typed-run-2026-09-05.md` with eight findings. All ten findings from the re-runs and the typed run are applied; the fixture outputs on disk predate them. Not yet done: re-checking the fixtures against the changed templates, the no-ECC smoke run, CI for this repo, creating the GitHub repo under `IBatsios`, the first live project.

@@ -21,6 +21,8 @@ A question behind a closed gate is neither, and appears in no list and no docume
 | Fires when | Sections | Action |
 |---|---|---|
 | Roles listed, but `features.auth` is false | 3.2 vs 6.1 | Ask which is right |
+| 6.5 says an admin manages users, but 3.2 names no admin-like role | 6.5 vs 3.2 | Ask which is right, then add the role |
+| Deployment target is not local only, but environments lack production | 10.1 vs 10.4 | Ask, then add production |
 | A payments integration, but `data.sensitive` lacks payment data | 7.1 vs 5.4 | Ask, then add the category |
 | Project type is web app, but frontend is none | 1.4 vs 8.2 | Ask which is right |
 | A data layer chosen but database is none, or the reverse | 8.4 vs 8.5 | Ask which is right |
@@ -37,4 +39,4 @@ A menu value that is not in the list is written verbatim and gets the generic te
 
 ## Scope guard
 
-Projected task count is 1 for the walking skeleton, plus 1 per must-have (2 when a must-have names more than one role or more than one screen), plus 1 when `features.auth` is true, plus 1 when a deployment target is set, plus 1 for the definition of done. Above 25, stop before building, show the number, and ask which should-have or could-have features move to out of scope. A must-have list is what the user decided; propose cuts, never make them.
+Projected task count is the number of slices the build would write: 1 for the walking skeleton, plus 1 per must-have story (2 when a story names more than one role or more than one screen), plus 1 per inferred slice from 7.2 or Section 14 that needs code and no story covers, plus 1 when `features.auth` is true, plus 1 when a deployment target is set, plus 1 for the definition of done. Count slices, not stories: an inferred story attached to an existing slice adds nothing. Above 25, stop before building, show the number, and ask which should-have or could-have features move to out of scope. A must-have list is what the user decided; propose cuts, never make them.

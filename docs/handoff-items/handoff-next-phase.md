@@ -11,13 +11,13 @@
 - Every fixture has been run once by following `SKILL.md` literally, and re-run after the fixes. All three pass their expected-files lists. The runs found 24 template and skill defects, all fixed the same day. Each fixture directory holds a `run-2026-09-05.md` with the findings, the fixes, and the re-run result.
 - The fixture runs were done by an agent following the skill in this session, not through an installed plugin.
 - `/kickoff` has now been run once as typed, with the plugin loaded from this repo: Refuse mode in this directory, then a full walkthrough in an empty directory (`~/Documents/Projects/kickoff-test`, kept outside the repo), confirm, build with `ts-prisma-postgres`, one commit, and the defaults file written. Everything in `expected-files.md` came out. `fixtures/typed-run-2026-09-05.md` holds the log: eight findings, the worst being that the build leaves no `main` branch, so the runbook's first pull request has no target.
-- Ten candidate findings are logged and not applied: the two from the re-runs (the uncovered-work rule turns a manual one-off import into a user story; the scope guard counts stories rather than slices) and the eight from the typed run.
+- All ten findings from the re-runs and the typed run are applied. The two design calls went: the scaffold commit lands on `main` and Task 01 opens the first branch; optional sections carry proposed answers so one word accepts them. The run logs record this. The fixture outputs on disk predate these changes; their expected-files lists do not.
 - `~/.claude/kickoff/defaults.yaml` now exists on this machine, written by that run. The next walkthrough here will pre-select from it; the no-ECC smoke run must use a profile without it.
 - `README.md` names the GitHub owner, `IBatsios`. The `claude-kickoff` repo does not exist there yet.
 
 ## What to do next, in order
 
-1. **Decide on the ten candidate findings**: two in the ts-default and generic-python run logs, eight in `fixtures/typed-run-2026-09-05.md`. Apply the agreed ones; most are one-sentence changes to `SKILL.md`, `reference/checks.md`, `reference/ci.md`, `reference/hosts.md`, and the deploy, DECISIONS, and PRD templates. Finding 1 (no `main` after the build) and finding 4 ("fine" on an optional section) are design calls; the rest are mechanical.
+1. **Re-check the three fixtures against the changed templates.** The git step now commits on `main`, the deploy templates gained a domain step, the skeletons start Task 01's branch, and the DECISIONS and PRD templates changed their rows. The expected-files lists are updated; regenerate the affected files and diff, as the earlier re-run did.
 2. **Run a fixture through `/kickoff` as typed** to exercise the build-from-file path: `docs/intake.md` complete, no walkthrough, the skills list shown at confirm. Use `fixtures/ts-default`. The typed run so far covered only the walkthrough path.
 3. **Smoke run without ECC and without a defaults file**: a profile with no `~/.claude/kickoff/defaults.yaml` and no `project-init` command anywhere. The runbook must have no ECC step and every task must read complete with no suggested-skills line. Use `fixtures/local-only`.
 4. **CI for this repo**: a GitHub Actions workflow that runs a markdown linter, validates the frontmatter of the blank form and the three fixtures against the key list in `reference/checks.md`, and checks that every path `SKILL.md` names exists. No model calls.
@@ -29,7 +29,7 @@
 
 - Commands in `reference/hosts.md` for `glab` and `tea` were written from memory of those CLIs and have only been rendered, never executed. Verify the flags on a real host before release.
 - `SKILL.md` asks for the structured question prompt for menu fields, which allows at most four options. The saved default goes first, the likeliest three follow, and any other value comes in through the free-text path. The typed run confirmed this works, including multi-select, at the cost of one extra exchange per section that mixes menu and prose fields.
-- When the user defers a whole block ("I'll defer to you" on the stack), offering one recommended set and confirming it with a single structured question worked and still gave every field an explicit yes. `SKILL.md` does not describe this path yet; see the observations in the typed-run log.
+- When the user defers a whole block ("I'll defer to you" on the stack), offering one recommended set and confirming it with a single structured question worked and still gave every field an explicit yes. `SKILL.md` section 2 now describes this path, along with proposed answers on optional sections.
 - The build writes documents and configuration only; Task 01 writes the code. If a run produces `package.json` or `pyproject.toml`, the skill overstepped.
 - `docs/question-bank.md` and `reference/checks.md` both describe the required fields and the contradiction checks. The runtime reads only `checks.md`. Keep them in step when a question changes.
 

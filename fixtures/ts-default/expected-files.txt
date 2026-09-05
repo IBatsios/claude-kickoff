@@ -16,7 +16,7 @@ CLAUDE.md
 .gitignore
 docker-compose.yml
 # Must NOT exist: LICENSE (private), docs/handoff-items/ (handoff_docs default false), any source or package file.
-# Git: one commit on branch feature/initial-scaffold.
+# Git: one commit, on main; no other branch. Task 01's branch is feature/walking-skeleton.
 # Runbook checks: Phase 0.1 uses gh; every command is PowerShell-safe; 0.4 has a winget install line and the PowerShell fallback scan;
 #   0.5 (ECC) present only if ~/.claude/commands/project-init.md exists on the machine running the fixture.
 # PRD checks: "Unknown" list contains 2.4; "Skipped" list is empty; out of scope has three items plus none moved (scope guard projects 8 tasks).

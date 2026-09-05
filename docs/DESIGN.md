@@ -41,7 +41,7 @@ Three words used throughout:
 - Menu fields use structured multiple-choice prompts. Prose fields are free text.
 - The intake is written to disk after every section, so abandoning and resuming costs nothing.
 - The stack is asked every time, one menu per layer, with the user's saved defaults pre-selected.
-- Installed skills are detected by reading the user and project skill directories and shown for the user to trim.
+- Installed skills are detected by reading the user and project skill directories. The ones that fit the stack are shown after Section 8 for the user to trim, with a count of the rest, since a machine may hold a couple of hundred.
 
 ### Confirm before build
 
@@ -75,7 +75,7 @@ Overwrites generated files after confirmation. Never touches the intake. Every g
 | `CLAUDE.md` | Six sections: project summary, stack, conventions in force, how to run and test, where docs and tasks live and how to pick the next task, installed skills to use. Nothing more. |
 | `.env.example` | Derived from the stack and integrations sections. |
 
-Then `git init` and a first commit on a feature branch. The skill never logs in, creates a remote, or pushes. Optional extras come from the defaults file, for example `handoff_docs: true` adds `docs/handoff-items/handoff-next-phase.md` pointing at the runbook.
+Then `git init -b main` and one commit on `main`, the only direct commit to it, since the scaffold is documents only; Task 01 opens the first branch and the first pull request. The skill never logs in, creates a remote, or pushes. Optional extras come from the defaults file, for example `handoff_docs: true` adds `docs/handoff-items/handoff-next-phase.md` pointing at the runbook.
 
 ## 6. The runbook
 
@@ -86,7 +86,7 @@ Then `git init` and a first commit on a feature branch. The skill never logs in,
 3. Fill `.env` from `.env.example`.
 4. Secrets gate before the first push: `gitleaks detect` with an install pointer, and a grep for common key patterns as the fallback when gitleaks is missing. Applies to public and private repos alike.
 5. If ECC is detected on the machine, run `/project-init`. Conditional; absent otherwise.
-6. Push the feature branch and open the first merge request or pull request.
+6. Push `main`, and protect it in the host's settings when the convention is on. The first merge request or pull request comes with Task 01.
 
 **Phase 1, for an agent or a human.**
 

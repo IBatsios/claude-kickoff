@@ -17,7 +17,7 @@
 4. Wire the single {{screen / route / command}} the most important path needs. Read real data from the database when the path needs it; otherwise return static data.
 5. Add the database connection and first migration when the path needs data: {{command, or "confirm with the user"}}. The runbook's `DATABASE_URL` uses the database's plain scheme; confirm the scheme the data layer expects (for example SQLAlchemy with psycopg 3 wants `postgresql+psycopg://`) and say in `README.md` where it is set.
 6. Write the run and test commands into `README.md` and check they match `CLAUDE.md`.
-7. Commit on this branch.
+7. Before writing code, start the branch `{{first prefix}}/walking-skeleton` from `main`; commit there, and open the {{pull request / merge request}} when the criteria pass. Local only: merge to `main`.
 
 ## Acceptance criteria
 

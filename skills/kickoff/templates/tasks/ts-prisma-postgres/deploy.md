@@ -16,7 +16,8 @@
 2. Build command: `prisma generate && next build` (Next.js) or `prisma generate && tsc` (Express). Set it in the project settings.
 3. Set every variable from `.env.example` in the project's environment variables, with a production `DATABASE_URL` that is not the development database.
 4. Migrations on release: add `prisma migrate deploy` to the build command before the build, or run it from a release step.
-5. Deploy from the default branch and walk "{{4.4}}" on the live URL.
+5. {{When deployment.domain is set: Add the domain in the project's Domains settings and create the DNS record Vercel shows.}}
+6. Deploy from the default branch and walk "{{4.4}}" on the live URL.
 <!-- Docker on a server I control -->
 1. Add a multi-stage `Dockerfile` on `node:22-alpine`: install, `prisma generate`, build, then a runtime stage that runs `prisma migrate deploy` and starts the app.
 2. Write `docker-compose.prod.yml` for the server: the app, and a `postgres:16` service with a named volume, both reading their environment from a `.env` on the server that is never committed. `docker-compose.yml`, when it exists, is the dev database's file and stays as it is.
@@ -27,7 +28,8 @@
 1. `fly launch` or `railway init` in this directory; accept the generated config. Human step: needs the account.
 2. Set every variable from `.env.example` with `fly secrets set` or `railway variables`, with a production `DATABASE_URL`.
 3. Add `prisma migrate deploy` as the release command.
-4. Deploy and walk "{{4.4}}" on the live URL.
+4. {{When deployment.domain is set: Add the custom domain on the service, with `fly certs add {{domain}}` or in Railway's service settings, and create the DNS record it shows.}}
+5. Deploy and walk "{{4.4}}" on the live URL.
 <!-- Netlify or Cloudflare -->
 1. Next.js on this target needs the target's adapter; Express does not run here without a serverless wrapper. Confirm the approach with the user before building, and record it in `docs/DECISIONS.md`.
 <!-- Desktop packaging -->

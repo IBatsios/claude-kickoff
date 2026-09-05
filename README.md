@@ -59,7 +59,7 @@ Every stack works. One stack gets task templates with concrete commands rather t
 
 - No network calls. No telemetry.
 - Every outbound action is a command you paste. The plugin never logs in, creates a remote, or pushes.
-- It runs `git init` and makes one local commit on a feature branch. Nothing else touches git.
+- It runs `git init` and makes one local commit on `main`, the only direct commit to it. Nothing else touches git.
 - English only, for now.
 
 ## License

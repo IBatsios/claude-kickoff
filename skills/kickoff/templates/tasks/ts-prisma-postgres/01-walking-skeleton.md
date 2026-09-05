@@ -18,10 +18,10 @@
 2. Prisma: `{{pm add dev}} prisma`, `{{pm add}} @prisma/client`, `{{pm bin}} prisma init --datasource-provider postgresql`. Confirm `DATABASE_URL` in `.env` matches the runbook's database step.
 3. Add the first model the most important path needs to `prisma/schema.prisma` ({{entity from 5.1, or a single `Ping` model when the path needs no data}}), then `{{pm bin}} prisma migrate dev --name init`.
 4. Tests: `{{pm add dev}} vitest` and a `test` script. First test at `src/lib/health.test.ts` on a pure function; no database.
-5. CI for {{git.host}}. <!-- Inline the rendered workflow from reference/ci.md with setup-node 22 and, for pnpm, pnpm/action-setup. Omit for local only. -->
+5. CI for {{git.host}}. <!-- Inline the rendered workflow from reference/ci.md with setup-node 22 and, for pnpm, pnpm/action-setup. Omit for local only. --> {{For pnpm: `pnpm/action-setup@v4` needs a `packageManager` field in `package.json`; add `"packageManager": "pnpm@<installed version>"` when `create-next-app` did not write it.}}
 6. The one {{page at src/app/{{path}}/page.tsx / route at src/routes/{{name}}.ts}} for the most important path, reading through Prisma when the path needs data.
 7. `README.md`: install, dev, test commands. Check they match `CLAUDE.md`.
-8. Commit on this branch.
+8. Before writing code, start the branch `{{first prefix}}/walking-skeleton` from `main`; commit there, and open the {{pull request / merge request}} when the criteria pass. Local only: merge to `main`.
 
 ## Acceptance criteria
 

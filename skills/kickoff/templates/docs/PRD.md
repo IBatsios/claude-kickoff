@@ -20,14 +20,14 @@
 
 | User | Wants | Role |
 |---|---|---|
-<!-- One row per line of 3.1. Role from 3.2; "one role" when that was the answer. -->
+<!-- One row per line of 3.1. Role from 3.2; "one role" when that was the answer. A role in 3.2, or the admin in 6.5, that no line of 3.1 mentions gets its own row, with what it wants taken from where it appears and marked "(inferred)". -->
 | {{who}} | {{what they want}} | {{role}} |
 
 Scale: {{3.3, or "unknown"}}. Technical comfort: {{3.4}}.
 
 ## User stories
 
-<!-- Normalize every line of 4.1 to 4.3 into "As a <role>, I can <do>, so that <benefit>". Keep the user's wording where it already fits; add the missing clause where it does not, and mark an added clause with "(inferred)" so it can be corrected. Number continuously across the three lists. Work that only 7.2 or Section 14 mentions and no story covers becomes a must-have story here, marked "(inferred)", so it has a task. -->
+<!-- Normalize every line of 4.1 to 4.3 into "As a <role>, I can <do>, so that <benefit>". Keep the user's wording where it already fits; add the missing clause where it does not, and mark an added clause with "(inferred)" so it can be corrected. Number continuously across the three lists. Work that only 7.2 or Section 14 mentions and no story covers becomes a must-have story here, marked "(inferred)", so it has a task, when it needs code. A manual one-off, such as an import the intake says is done by hand, is not a story; it becomes a step on the closest task. -->
 
 ### Must have for v1
 

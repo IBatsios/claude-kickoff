@@ -209,6 +209,8 @@ The confirm step lists any of these it finds and asks the user to resolve them.
 | Check | Sections |
 |---|---|
 | Roles listed, but nobody signs in | 3.2 vs 6.1 |
+| An admin manages users, but no admin-like role is listed | 6.5 vs 3.2 |
+| A deployment target is set, but environments lack production | 10.1 vs 10.4 |
 | A payments integration, but payment data not marked sensitive | 7.1 vs 5.4 |
 | Project type is web app, but frontend is none | 1.4 vs 8.2 |
 | A data layer chosen, but database is none, or the reverse | 8.4 vs 8.5 |

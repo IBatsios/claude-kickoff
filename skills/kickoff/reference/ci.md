@@ -27,7 +27,7 @@ jobs:
         run: {{test}}
 ```
 
-For the `ts-prisma-postgres` set, add `actions/setup-node@v4` with `node-version: 22` before Install, and `pnpm/action-setup@v4` when the package manager is pnpm.
+For the `ts-prisma-postgres` set, add `actions/setup-node@v4` with `node-version: 22` before Install, and `pnpm/action-setup@v4` when the package manager is pnpm. That action reads the pnpm version from the `packageManager` field of `package.json` and fails without it; `create-next-app` does not always write the field, so the skeleton adds `"packageManager": "pnpm@<installed version>"` when it is missing.
 
 ## GitLab CI
 
