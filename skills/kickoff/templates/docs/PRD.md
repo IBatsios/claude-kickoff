@@ -1,5 +1,5 @@
 <!-- Generated from docs/intake.md by kickoff v{{version}}. Edit the intake, not this file. -->
-<!-- Builder: comment lines like this one are instructions. Remove them from the output. Fill every {{value}} from the intake; section numbers refer to the form. A heading whose whole section is blank in the intake is kept, with its questions listed under "Open questions" instead. -->
+<!-- Builder: comment lines like this one are instructions. Remove them from the output. Fill every {{value}} from the intake; section numbers refer to the form. A section whose every answer is blank is omitted from the body, and its questions go under "Open questions" as skipped. The one exception is "Definition of done for v1", which stays with the fallback line. Questions behind a closed gate (reference/checks.md lists them) appear nowhere. -->
 
 # {{project.name}} — Product Requirements
 
@@ -57,7 +57,7 @@ Must never be lost or wrong: {{5.2}}. Retention: {{5.3}}. Sensitive categories: 
 
 ## Sign-in and permissions
 
-<!-- Only when features.auth is true. When false, one line: "Nobody signs in. Every visitor sees the same thing." -->
+<!-- Only when features.auth is true. When false, one line: "Nobody signs in." followed by "Every visitor sees the same thing." for a web app or API, or "It runs as whoever runs it." for anything else. -->
 
 Methods: {{features.auth_methods}}. Visitors who are not signed in can: {{6.4}}. Admin manages users: {{6.5}}.
 
@@ -105,7 +105,7 @@ Imports and exports: {{7.2}}
 
 ## Definition of done for v1
 
-<!-- 14.1 as checkboxes. 14.2 as the success signal line. -->
+<!-- 14.1 as checkboxes. 14.2 as the success signal line. When 14.1 is blank, replace the checkboxes with one line: "Not specified in the intake. Task {{NN}} falls back to: every must-have story demonstrated, and every task complete." Omit the success signal line when 14.2 is blank. -->
 
 - [ ] {{statement}}
 

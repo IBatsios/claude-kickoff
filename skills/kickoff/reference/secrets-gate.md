@@ -1,6 +1,6 @@
 # Secrets gate
 
-Render Phase 0 step 4 from this file, for public and private repositories alike. The gate sits immediately before the first push. Render the gitleaks block for `environment.os`, then the fallback block for `environment.shell` under the heading "If gitleaks is not installed".
+Render Phase 0 step 4 from this file, for public and private repositories alike. The gate sits immediately before the first push. For local only there is no push; open the step with "There is no remote yet, so nothing is pushed. Run this before you ever add one, and again before the first push." Render the gitleaks block for `environment.os`, then the fallback block for `environment.shell` under the heading "If gitleaks is not installed".
 
 ## gitleaks
 

@@ -14,6 +14,8 @@ Body: 1.3 pitch, 2.1 problem, 2.2 who copes how, 3.1 users, 3.2 roles, 3.4 how t
 
 Blank is recorded in the PRD's open questions as *skipped*. "I don't know" is recorded as *unknown*. Both are listed; the PRD says which is which.
 
+A question behind a closed gate is neither, and appears in no list and no document: all of Section 6 when `features.auth` is false; 9.2, 9.3, 10.2, and 10.4 when the host or the deployment target is local only; 9.5 when visibility is private; 10.3 when `stack.database` is none.
+
 ## Contradictions
 
 | Fires when | Sections | Action |

@@ -19,7 +19,7 @@ Phase 0 is for a person: it needs accounts, passwords, and judgement. Phase 1 is
 
 Copy `.env.example` to `.env` and fill every value. Where each one comes from:
 
-<!-- One line per variable in .env.example: name, then where to get it (the provider console, the database step above, or "any long random string" for secrets you generate). -->
+<!-- One line per variable in .env.example: name, then where to get it (the provider console, the database step above, or "any long random string" for secrets you generate). Omit this whole step, and renumber, when .env.example has no variables. -->
 
 - `{{VAR}}`: {{where to get it}}
 

@@ -8,6 +8,7 @@ One line per decision. Newest at the bottom. Reasons come from the intake; where
 | # | Decision | Why | Source |
 |---|---|---|---|
 | D1 | Stack: {{language}}, {{frontend}}, {{backend}}, {{database}} with {{data_layer}}, {{styling}}, tests with {{tests}}, {{package_manager}} | {{8.11 or "chosen in intake"}} | Section 8 |
+<!-- D2 for local only reads "Code lives locally, no remote yet, {{visibility}}". D3 for local only reads "Runs locally only; no deployment". D4 only when stack.database is not none. -->
 | D2 | Code lives on {{git.host}}{{, at host_url}}, {{visibility}}{{, licensed license}} | {{"chosen in intake"}} | Section 9 |
 | D3 | Runs on {{deployment.target}}{{; environments: ...}} | {{"chosen in intake"}} | Section 10 |
 | D4 | Development database: {{environment.dev_database}} | {{"chosen in intake"}} | Section 10 |

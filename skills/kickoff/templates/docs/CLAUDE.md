@@ -11,7 +11,7 @@
 
 ## Conventions
 
-<!-- The resolved conventions, as rules. Include only the ones that are true. -->
+<!-- The resolved conventions, as rules. Include only the ones that are true and apply: the backup line only when stack.database is not none; for local only, the branch line ends "through a pull request once a remote exists". -->
 
 - Work on a branch named `{{prefix}}/<short-description>`; merge to the default branch through a {{pull request / merge request}}.
 - Commit messages: {{conventional commits with types feat, fix, chore, docs, test, refactor / free form}}.
