@@ -27,7 +27,7 @@ Scale: {{3.3, or "unknown"}}. Technical comfort: {{3.4}}.
 
 ## User stories
 
-<!-- Normalize every line of 4.1 to 4.3 into "As a <role>, I can <do>, so that <benefit>". Keep the user's wording where it already fits; add the missing clause where it does not, and mark an added clause with "(inferred)" so it can be corrected. Number continuously across the three lists. -->
+<!-- Normalize every line of 4.1 to 4.3 into "As a <role>, I can <do>, so that <benefit>". Keep the user's wording where it already fits; add the missing clause where it does not, and mark an added clause with "(inferred)" so it can be corrected. Number continuously across the three lists. Work that only 7.2 or Section 14 mentions and no story covers becomes a must-have story here, marked "(inferred)", so it has a task. -->
 
 ### Must have for v1
 
@@ -67,7 +67,7 @@ Methods: {{features.auth_methods}}. Visitors who are not signed in can: {{6.4}}.
 
 ## Integrations
 
-<!-- From 7.1 and 7.2. Omit when blank. -->
+<!-- From 7.1 and 7.2. Omit the section when both are blank. The table renders only when 7.1 has entries; the imports-and-exports line only when 7.2 is answered. -->
 
 | Service | For | Account exists |
 |---|---|---|

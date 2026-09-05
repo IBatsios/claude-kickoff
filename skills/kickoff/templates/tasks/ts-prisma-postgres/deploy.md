@@ -19,8 +19,8 @@
 5. Deploy from the default branch and walk "{{4.4}}" on the live URL.
 <!-- Docker on a server I control -->
 1. Add a multi-stage `Dockerfile` on `node:22-alpine`: install, `prisma generate`, build, then a runtime stage that runs `prisma migrate deploy` and starts the app.
-2. Add the app to `docker-compose.yml` beside the database service, reading its environment from a `.env` on the server that is never committed.
-3. Copy the project to the server, fill the server's `.env`, and run `docker compose up -d --build`.
+2. Write `docker-compose.prod.yml` for the server: the app, and a `postgres:16` service with a named volume, both reading their environment from a `.env` on the server that is never committed. `docker-compose.yml`, when it exists, is the dev database's file and stays as it is.
+3. Copy the project to the server, fill the server's `.env`, and run `docker compose -f docker-compose.prod.yml up -d --build`.
 4. Put a reverse proxy with TLS in front of the app port ({{Caddy or nginx; confirm with the user}}) for {{deployment.domain}}.
 5. Walk "{{4.4}}" on the live URL.
 <!-- Fly.io or Railway -->

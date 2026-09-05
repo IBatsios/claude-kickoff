@@ -4,6 +4,8 @@ The walking skeleton (Task 01) is done only when CI is green on the host. Render
 
 Replace `{{install}}` and `{{test}}` with the template set's commands. For `ts-prisma-postgres` they are `{{package manager}} install` and `{{package manager}} test`. For the generic set, use the commands the intake's stack implies and say in the task that the user should confirm them.
 
+The generic set also adds the language's setup action before Install, marked "confirm" in the task: `actions/setup-python@v5` with `python-version`, `actions/setup-go@v5` with `go-version`, `dtolnay/rust-toolchain@stable`, `actions/setup-java@v4`, `actions/setup-node@v4` for a JavaScript stack outside the first-class set. Package managers that are not on the runner by default get an install line first, for example `pip install uv` before `uv sync`.
+
 ## GitHub Actions
 
 `.github/workflows/ci.yml`:
