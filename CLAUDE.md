@@ -28,10 +28,10 @@ skills/kickoff/templates/docs/                 PRD, ARCHITECTURE, DECISIONS, RUN
 skills/kickoff/templates/tasks/generic/        walking skeleton, feature slice, sign-in, deploy, definition of done
 skills/kickoff/templates/tasks/ts-prisma-postgres/   the first-class set (definition of done is shared from generic)
 skills/kickoff/templates/expected-files.md     what a build must produce
-fixtures/                                      ts-default, generic-python, local-only, each with expected-files.txt
+fixtures/                                      ts-default, generic-python, local-only, each with expected-files.txt; typed-run-*.md logs
 docs/DESIGN.md, docs/question-bank.md, docs/handoff-items/
 ```
 
 ## Status snapshot (2026-09-05)
 
-Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold` in four commits. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. Not yet done: a run through `/kickoff` as typed rather than by an agent reading SKILL.md, the no-ECC smoke run, CI for this repo, creating the GitHub repo under `IBatsios`, the first live project. Two candidate findings are logged and unapplied.
+Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold`. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. The first run through `/kickoff` as typed is done: a full walkthrough in an empty directory, build, commit, and defaults file, logged in `fixtures/typed-run-2026-09-05.md` with eight findings. Not yet done: applying those findings and the two from the re-runs, the no-ECC smoke run, CI for this repo, creating the GitHub repo under `IBatsios`, the first live project.
