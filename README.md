@@ -7,7 +7,7 @@ It is built for the first hour of a project: the hour that usually goes to a bla
 ## Install
 
 ```
-/plugin marketplace add YOUR-GITHUB-USER/claude-kickoff
+/plugin marketplace add IBatsios/claude-kickoff
 /plugin install kickoff@claude-kickoff
 ```
 
@@ -49,17 +49,21 @@ Phase 0 of the runbook is the human part: create the remote, set up the dev data
 
 ## Defaults that learn
 
-The first run asks everything. At the end it offers to save the answers that rarely change (stack, host, shell, conventions) to `~/.claude/kickoff/defaults.yaml`. The next run pre-selects them. Edit the file by hand whenever you like.
+The first run asks everything. At the end it offers to save the answers that rarely change (stack, host, shell, conventions) to `~/.claude/kickoff/defaults.yaml`, or under `CLAUDE_CONFIG_DIR` if you have set one. The next run pre-selects them. Edit the file by hand whenever you like.
 
 ## Stacks
 
 Every stack works. One stack gets task templates with concrete commands rather than generic ones: TypeScript with Next.js or Express, Prisma, and PostgreSQL. Adding another is the main way to contribute; see `CONTRIBUTING.md`.
 
+## Works with ECC, never needs it
+
+[ECC](https://github.com/affaan-m/ECC) is a bundle of rules, skills, and commands for Claude Code. When kickoff finds it installed, the runbook gains one step, running ECC's `/project-init` to install the rules for the chosen stack, and the generated tasks suggest ECC skills where they fit. Without it, nothing is missing: every task reads complete on its own, and the runbook simply has one step fewer. The same goes for any other skills on your machine; kickoff detects what is there and suggests only what fits the project.
+
 ## Commitments
 
 - No network calls. No telemetry.
 - Every outbound action is a command you paste. The plugin never logs in, creates a remote, or pushes.
-- It runs `git init` and makes one local commit on a feature branch. Nothing else touches git.
+- It runs `git init` and makes one local commit on `main`, the only direct commit to it. Nothing else touches git.
 - English only, for now.
 
 ## License

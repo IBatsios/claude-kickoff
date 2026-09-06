@@ -4,6 +4,8 @@ The walking skeleton (Task 01) is done only when CI is green on the host. Render
 
 Replace `{{install}}` and `{{test}}` with the template set's commands. For `ts-prisma-postgres` they are `{{package manager}} install` and `{{package manager}} test`. For the generic set, use the commands the intake's stack implies and say in the task that the user should confirm them.
 
+The generic set also adds the language's setup action before Install, marked "confirm" in the task: `actions/setup-python@v5` with `python-version`, `actions/setup-go@v5` with `go-version`, `dtolnay/rust-toolchain@stable`, `actions/setup-java@v4`, `actions/setup-node@v4` for a JavaScript stack outside the first-class set. Package managers that are not on the runner by default get an install line first, for example `pip install uv` before `uv sync`.
+
 ## GitHub Actions
 
 `.github/workflows/ci.yml`:
@@ -25,7 +27,7 @@ jobs:
         run: {{test}}
 ```
 
-For the `ts-prisma-postgres` set, add `actions/setup-node@v4` with `node-version: 22` before Install, and `pnpm/action-setup@v4` when the package manager is pnpm.
+For the `ts-prisma-postgres` set, add `actions/setup-node@v4` with `node-version: 22` before Install, and `pnpm/action-setup@v4` when the package manager is pnpm. That action reads the pnpm version from the `packageManager` field of `package.json` and fails without it; `create-next-app` does not always write the field, so the skeleton adds `"packageManager": "pnpm@<installed version>"` when it is missing.
 
 ## GitLab CI
 
@@ -50,6 +52,10 @@ Same file shape as GitHub Actions, at `.gitea/workflows/ci.yml`. `actions/checko
 ## Other
 
 No CI file. The skeleton's acceptance criteria say "tests pass locally" only, and the task notes that CI is set up by hand for this host.
+
+## When Playwright is in the tests
+
+The skeleton does not need it. The first slice that adds an end-to-end test adds a step before Test in the CI job: `{{pm bin}} playwright install --with-deps` (`pnpm playwright` / `npx playwright` / `yarn playwright` / `bunx playwright`). The feature-slice templates say so in their notes.
 
 ## When a database is needed in CI
 

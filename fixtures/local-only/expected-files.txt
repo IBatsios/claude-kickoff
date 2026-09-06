@@ -6,14 +6,14 @@ docs/ARCHITECTURE.md
 docs/DECISIONS.md
 docs/RUNBOOK.md
 docs/tasks/01-walking-skeleton.md
-docs/tasks/02-move-screenshots-by-month.md
-docs/tasks/03-dry-run.md
+docs/tasks/02-*.md and docs/tasks/03-*.md: two feature slices, one per must-have, in that order (move by month, dry run); slugs may vary
 docs/tasks/04-definition-of-done.md
+# Task count check: exactly 4 files in docs/tasks/.
 CLAUDE.md
 .env.example
 .gitignore
 # Must NOT exist: LICENSE, docker-compose.yml, docs/tasks/*-sign-in.md, docs/tasks/*-deploy.md, docs/handoff-items/, any source or package file.
-# Git: one commit on branch feature/initial-scaffold.
+# Git: one commit, on main; no other branch. Task 01's branch is feature/walking-skeleton, merged to main locally since there is no remote.
 # Runbook checks: Phase 0 has no remote step and no database step; the push step is replaced by the one-line "no remote, Phase 1 can start" note;
 #   the secrets scan is still present, with the macOS brew line and the zsh fallback. No ECC step unless project-init is on the machine.
 # Task checks: 01 has no CI criterion; 04's criteria fall back to "every must-have demonstrated and every task complete" because Section 14 is blank.

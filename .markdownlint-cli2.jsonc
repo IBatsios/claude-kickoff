@@ -1,0 +1,20 @@
+{
+  // Lint config for the plugin repo. Templates start with an HTML comment
+  // rather than a heading, carry {{placeholders}}, and quote shell commands
+  // without a language tag, so the rules those would trip are off.
+  "config": {
+    "default": true,
+    "MD013": false, // line length: prose is wrapped by the editor, not by hand
+    "MD024": { "siblings_only": true }, // repeated headings are fine across sections
+    "MD026": false, // trailing punctuation in headings: the intake numbers questions "1.3 Pitch:"
+    "MD033": false, // inline HTML: builder comments and the generated-file header
+    "MD034": false, // bare URLs: runbook steps name hosts as plain URLs on purpose
+    "MD036": false, // emphasis as heading: "**Date:**" lines in handoff docs
+    "MD040": false, // fenced code language: paste-in command blocks carry none
+    "MD041": false  // first line heading: generated files start with the header comment
+  },
+  "ignores": [
+    "node_modules/**",
+    "fixtures/**/out/**"
+  ]
+}

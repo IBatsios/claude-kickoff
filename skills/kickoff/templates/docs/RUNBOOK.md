@@ -19,7 +19,7 @@ Phase 0 is for a person: it needs accounts, passwords, and judgement. Phase 1 is
 
 Copy `.env.example` to `.env` and fill every value. Where each one comes from:
 
-<!-- One line per variable in .env.example: name, then where to get it (the provider console, the database step above, or "any long random string" for secrets you generate). -->
+<!-- One line per variable in .env.example: name, then where to get it (the provider console, the database step above, or "any long random string" for secrets you generate). Omit this whole step, and renumber, when .env.example has no variables. -->
 
 - `{{VAR}}`: {{where to get it}}
 
@@ -35,9 +35,9 @@ Copy `.env.example` to `.env` and fill every value. Where each one comes from:
 
 Run `/project-init` in this directory and accept the plan it proposes.
 
-### 0.6 Push and open the first {{pull request / merge request}}
+### 0.6 Push
 
-<!-- From the "After the push" section of reference/hosts.md. Local only: replace with one line saying there is no remote and Phase 1 can start now. -->
+<!-- From "The push" section of reference/hosts.md: push main, the line saying Task 01 opens the first pull or merge request, and the protect-main line when the convention is on. This is the only place the runbook pushes. Local only: the one-line "no remote, Phase 1 can start now" note. -->
 
 <!-- When conventions.db_backup_before_migrate is true and environments lack staging, add: -->
 ### 0.7 Before every migration from now on
@@ -46,7 +46,7 @@ There is no staging environment. Back up the database before each migration: {{o
 
 ## Phase 1 — build
 
-Pick the next task from the **frontier**: any task whose "Blocked by" list is entirely done. Finish it to its acceptance criteria before starting another. Each task lives in `docs/tasks/`.
+Pick the next task from the **frontier**: any task whose "Blocked by" list is entirely done. Finish it to its acceptance criteria before starting another. Each task lives in `docs/tasks/`. Every task starts on its own branch from `main` and ends in a {{pull request / merge request; for local only: a merge to main}}.
 
 | # | Task | Blocked by | Delivers |
 |---|---|---|---|

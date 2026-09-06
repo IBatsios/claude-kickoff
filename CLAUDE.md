@@ -24,14 +24,16 @@
 skills/kickoff/SKILL.md                        the skill: modes, walkthrough, confirm, build, regenerate
 skills/kickoff/reference/                      checks, hosts, dev-database, secrets-gate, ci, defaults
 skills/kickoff/templates/intake.md             the blank form
-skills/kickoff/templates/docs/                 PRD, ARCHITECTURE, DECISIONS, RUNBOOK, CLAUDE.md, env.example
+skills/kickoff/templates/docs/                 PRD, ARCHITECTURE, DECISIONS, RUNBOOK, CLAUDE.template.md, env.example, gitignore, handoff-next-phase
 skills/kickoff/templates/tasks/generic/        walking skeleton, feature slice, sign-in, deploy, definition of done
 skills/kickoff/templates/tasks/ts-prisma-postgres/   the first-class set (definition of done is shared from generic)
 skills/kickoff/templates/expected-files.md     what a build must produce
-fixtures/                                      ts-default, generic-python, local-only, each with expected-files.txt
+fixtures/                                      ts-default, generic-python, local-only, each with expected-files.txt; typed-run-*.md and smoke-run-*.md logs
+scripts/check_frontmatter.py, check_references.py   the CI checks; run locally before a pull request
+.github/workflows/ci.yml, .markdownlint-cli2.jsonc  CI: the two scripts plus markdownlint, no model calls
 docs/DESIGN.md, docs/question-bank.md, docs/handoff-items/
 ```
 
 ## Status snapshot (2026-09-05)
 
-Design confirmed and question bank reviewed. Plugin scaffold written on branch `feature/skill-scaffold`: manifest, SKILL.md, all reference files, all templates, three fixtures, README, LICENSE, CHANGELOG, CONTRIBUTING. Nothing committed yet. Not yet run: any fixture, the no-ECC smoke run, CI, the hand-written example output for this repo, the first live project.
+Design confirmed, question bank reviewed, plugin scaffold complete on branch `feature/skill-scaffold`. All three fixtures run, 24 findings fixed, all three re-run and passing; each fixture directory has a `run-2026-09-05.md`. The first run through `/kickoff` as typed is done: a full walkthrough in an empty directory, build, commit, and defaults file, logged in `fixtures/typed-run-2026-09-05.md` with eight findings. All ten findings from the re-runs and the typed run are applied, and all three fixtures re-run against them and pass. Both invocation paths have been run as typed; every finding from every run is applied, and a confirming typed run showed the last six in effect. The no-ECC smoke run passes on a clean profile via `CLAUDE_CONFIG_DIR`, which the skill now follows. Fixture intakes no longer depend on the machine's defaults file. CI is written and its two scripts pass locally; the lint step runs first on the first push. Not yet done: creating the GitHub repo under `IBatsios`, the first live project.

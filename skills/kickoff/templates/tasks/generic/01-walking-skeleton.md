@@ -15,9 +15,9 @@
 2. Add the test runner ({{stack.tests}}) and one test that needs no database: a pure function, or a health route that returns a fixed value.
 3. Add the CI file for {{git.host}}. <!-- Inline the rendered workflow from reference/ci.md, or omit this step for local only. -->
 4. Wire the single {{screen / route / command}} the most important path needs. Read real data from the database when the path needs it; otherwise return static data.
-5. Add the database connection and first migration when the path needs data: {{command, or "confirm with the user"}}.
+5. Add the database connection and first migration when the path needs data: {{command, or "confirm with the user"}}. The runbook's `DATABASE_URL` uses the database's plain scheme; confirm the scheme the data layer expects (for example SQLAlchemy with psycopg 3 wants `postgresql+psycopg://`) and say in `README.md` where it is set.
 6. Write the run and test commands into `README.md` and check they match `CLAUDE.md`.
-7. Commit on this branch.
+7. Before writing code, start the branch `{{first prefix}}/walking-skeleton` from `main`; commit there, and open the {{pull request / merge request}} when the criteria pass. Local only: merge to `main`.
 
 ## Acceptance criteria
 
@@ -34,3 +34,6 @@
 ## Notes
 
 Keep the skeleton test free of the database so CI needs no service. The first slice that needs the database in CI adds a service container; the feature-slice tasks say how.
+
+<!-- Keep the next paragraph only when the most important path needs a signed-in user. -->
+The most important path needs a signed-in user and sign-in does not exist yet. Use one fixed placeholder identity, a constant in code and never a real account, and name it as such; the sign-in task replaces it.

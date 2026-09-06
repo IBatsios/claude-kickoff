@@ -15,7 +15,7 @@ Always:
 - `CLAUDE.md` at the project root
 - `.env.example` at the project root
 - `.gitignore` at the project root, listing at least `.env`
-- A git repository with one commit on a branch named `<first prefix>/initial-scaffold`
+- A git repository whose only commit is on `main`, with no other branch; Task 01 opens the first one
 
 When `features.auth` is true:
 
@@ -27,7 +27,7 @@ When `deployment.target` is not local only:
 
 When `git.visibility` is public:
 
-- `LICENSE` at the project root
+- `LICENSE` at the project root, the license text verbatim; the one generated file with no header
 
 When `environment.dev_database` is Docker Compose:
 

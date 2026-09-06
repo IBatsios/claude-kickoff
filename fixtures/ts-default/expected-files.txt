@@ -7,18 +7,16 @@ docs/DECISIONS.md
 docs/RUNBOOK.md
 docs/tasks/01-walking-skeleton.md
 docs/tasks/02-sign-in.md
-docs/tasks/03-propose-a-book.md
-docs/tasks/04-vote-for-books.md
-docs/tasks/05-see-the-current-pick.md
-docs/tasks/06-close-the-vote.md
+docs/tasks/03-*.md through docs/tasks/06-*.md: four feature slices, one per must-have, in that order (propose, vote, current pick, close the vote); slugs may vary
 docs/tasks/07-deploy.md
 docs/tasks/08-definition-of-done.md
+# Task count check: exactly 8 files in docs/tasks/.
 CLAUDE.md
 .env.example
 .gitignore
 docker-compose.yml
-# Must NOT exist: LICENSE (private), docs/handoff-items/ (handoff_docs default false), any source or package file.
-# Git: one commit on branch feature/initial-scaffold.
+# Must NOT exist: LICENSE (private), docs/handoff-items/ (handoff_docs false, set explicitly in the intake), any source or package file.
+# Git: one commit, on main; no other branch. Task 01's branch is feature/walking-skeleton.
 # Runbook checks: Phase 0.1 uses gh; every command is PowerShell-safe; 0.4 has a winget install line and the PowerShell fallback scan;
 #   0.5 (ECC) present only if ~/.claude/commands/project-init.md exists on the machine running the fixture.
 # PRD checks: "Unknown" list contains 2.4; "Skipped" list is empty; out of scope has three items plus none moved (scope guard projects 8 tasks).

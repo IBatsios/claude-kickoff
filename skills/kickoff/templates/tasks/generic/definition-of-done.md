@@ -1,5 +1,5 @@
 <!-- Generated from docs/intake.md by kickoff v{{version}}. Edit the intake, not this file. -->
-<!-- Builder: comment lines are instructions; remove them. Always the highest-numbered task, written to docs/tasks/NN-definition-of-done.md. When Section 14 is blank, the criteria are: every must-have story demonstrated, and the runbook's Phase 0 and every task complete. -->
+<!-- Builder: comment lines are instructions; remove them. Always the highest-numbered task, written to docs/tasks/NN-definition-of-done.md. When Section 14 is blank, the criteria are: every must-have story demonstrated, and the runbook's Phase 0 and every task complete. This task never carries a "Suggested skills" section. -->
 
 # {{NN}}: Definition of done for v1
 

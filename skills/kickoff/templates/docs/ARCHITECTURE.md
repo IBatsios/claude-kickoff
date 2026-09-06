@@ -41,7 +41,7 @@ erDiagram
 
 ## Sign-in and permissions
 
-<!-- Only when features.auth is true. Name the methods, where sessions live (as implied by the template set: Auth.js with the Prisma adapter for ts-prisma-postgres, "not specified" for generic), and reproduce the role matrix from the PRD. -->
+<!-- Only when features.auth is true. Name the methods, where sessions live (as implied by the template set: Auth.js with the Prisma adapter for ts-prisma-postgres, "not specified" for generic), and reproduce the role matrix from the PRD. When false, one line: "Nobody signs in." followed by "Every visitor sees the same thing." for a web app or API, or "It runs with the permissions of whoever runs it." for anything else. -->
 
 ## Integrations
 
@@ -67,7 +67,7 @@ erDiagram
 
 ## Conventions in force
 
-<!-- The resolved conventions block: intake value, else defaults file, else shipped default. One line each. -->
+<!-- The resolved conventions block: intake value, else defaults file, else shipped default. One line each. Omit the backup line when stack.database is none. -->
 
 - Default branch protected: {{value}}
 - Branch prefixes: {{value}}
