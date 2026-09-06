@@ -103,7 +103,7 @@ Then `git init -b main` and one commit on `main`, the only direct commit to it, 
 
 ## 8. Defaults and conventions
 
-- Defaults file: `~/.claude/kickoff/defaults.yaml`, same keys as the intake frontmatter, so pre-filling the form is a plain merge. Cross-platform because every Claude Code user already has `~/.claude`.
+- Defaults file: `~/.claude/kickoff/defaults.yaml`, or under `$CLAUDE_CONFIG_DIR` when that variable is set, same keys as the intake frontmatter, so pre-filling the form is a plain merge. Cross-platform because every Claude Code user already has `~/.claude`. Skill detection follows the same directory, so a clean profile is one environment variable away.
 - Learned: at the end of each run the skill shows which answers differed from the saved defaults and offers to save them. One prompt, never silent. The file is also hand-editable.
 - Eligible to be saved: every `stack.*` field, `git.host`, `git.host_url`, `git.owner`, every `environment.*` field (OS, shell, dev database mode), `deployment.target`, every `conventions.*` field. Never saved: anything project-specific such as the problem, features, or data.
 - Conventions ship with the skill as defaults and are asked in the walkthrough with the saved or shipped default pre-selected, so a project can differ from the defaults file: protect the default branch (work on branches, merge via MR/PR), branch prefixes `feature/` `fix/` `chore/`, conventional commit messages, always write `.env.example`, back up the database before migrations, handoff docs off.

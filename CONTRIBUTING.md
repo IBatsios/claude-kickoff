@@ -30,5 +30,5 @@ A first-class stack gets stack-aware task templates: "run the Prisma migration" 
 
 - Bump `version` in `.claude-plugin/plugin.json` and add the version heading in `CHANGELOG.md`.
 - Run all three fixtures by hand and compare against their expected file lists. Every fixture intake sets every `conventions` field explicitly, so a run never depends on the machine's `~/.claude/kickoff/defaults.yaml`; keep it that way when adding one.
-- Run one fixture on a profile with no `~/.claude/kickoff/defaults.yaml` and no other skills installed.
+- Run one fixture on a clean profile: set `CLAUDE_CONFIG_DIR` to an empty directory before starting Claude Code. The skill follows that variable, so it will see no skills, no commands, no plugins, and no defaults file. The runbook must have no ECC step and no task may carry a suggested-skills line.
 - Tag the commit with the version.

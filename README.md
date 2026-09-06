@@ -49,7 +49,7 @@ Phase 0 of the runbook is the human part: create the remote, set up the dev data
 
 ## Defaults that learn
 
-The first run asks everything. At the end it offers to save the answers that rarely change (stack, host, shell, conventions) to `~/.claude/kickoff/defaults.yaml`. The next run pre-selects them. Edit the file by hand whenever you like.
+The first run asks everything. At the end it offers to save the answers that rarely change (stack, host, shell, conventions) to `~/.claude/kickoff/defaults.yaml`, or under `CLAUDE_CONFIG_DIR` if you have set one. The next run pre-selects them. Edit the file by hand whenever you like.
 
 ## Stacks
 

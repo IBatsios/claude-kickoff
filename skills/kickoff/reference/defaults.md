@@ -1,6 +1,6 @@
 # Defaults file
 
-`~/.claude/kickoff/defaults.yaml`. Same keys as the intake frontmatter, only the eligible ones. Missing file means no defaults; ask everything with the shipped conventions pre-selected.
+`<config>/kickoff/defaults.yaml`, where `<config>` is `$CLAUDE_CONFIG_DIR` when that variable is set and `~/.claude` otherwise. Same keys as the intake frontmatter, only the eligible ones. Missing file means no defaults; ask everything with the shipped conventions pre-selected.
 
 ## Eligible keys
 
