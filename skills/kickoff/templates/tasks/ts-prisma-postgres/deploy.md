@@ -35,7 +35,8 @@
 <!-- Desktop packaging -->
 1. A web stack does not package as a desktop app by itself. Confirm with the user whether Tauri wraps the Next.js app, and record it in `docs/DECISIONS.md`.
 
-6. Write the deploy procedure into `README.md`.
+<!-- Builder: whichever block was kept, append this as its last numbered step. -->
+Write the deploy procedure into `README.md`.
 
 ## Acceptance criteria
 
