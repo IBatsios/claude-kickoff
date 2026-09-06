@@ -33,3 +33,18 @@ Mode detection on a complete intake with no questions asked. The filtered skills
 
 - Confirm at three minutes and build at ten are long for a form that was already filled. Almost all of it is reading every reference and template in full, one Bash call each. A future version could read only the template set it needs, but the reads are what make the output faithful.
 - The run's DECISIONS labeled the defaults-sourced convention row "intake left blank; from defaults". The template does not say to; it is better than "chosen in intake" and could become the rule.
+
+## Confirming run, kickoff-test-3, same day
+
+Run as typed against the updated ts-default intake in a fresh folder, with the six fixes above in place. Passes, and every fix is visible:
+
+- The mode line names the folder: "Confirm then Build, in `C:\Users\ibats\Documents\Projects\kickoff-test-3`".
+- `docs/handoff-items/` is absent: the intake's explicit `handoff_docs: false` won over the machine's defaults file, which still says true.
+- The defaults offer arrived as its own structured prompt, with "Keep my saved defaults (Recommended)" first and "Save these as my defaults" second, and the file was left untouched. The confirm summary also used a structured prompt this time, "Yes, build it" against "Not yet, change something", which the skill does not require but which reads well.
+- `front-a11y` was suggested, in `CLAUDE.md` and on the four UI tasks.
+- The 8.11 row is D2.
+- No heredoc failure; every file came through the file-writing tool.
+
+Seventeen tracked files, eight tasks, one commit on `main`, no other branch, headers on everything, no leftovers, the push after the gate with the protect-`main` line. About eleven minutes end to end.
+
+Both invocation paths have now been run as typed, and every finding from every run is applied and confirmed.
