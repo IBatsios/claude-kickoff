@@ -1,0 +1,33 @@
+name: ci
+
+# Model-free checks only. The skill itself is exercised by the fixture runs in
+# fixtures/*/run-*.md, by hand, as CONTRIBUTING.md describes.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Frontmatter schema, blank form and fixtures
+        run: python scripts/check_frontmatter.py
+
+      - name: Template and reference paths
+        run: python scripts/check_references.py
+
+      - name: Markdown lint
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"

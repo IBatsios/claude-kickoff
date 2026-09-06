@@ -26,6 +26,22 @@ A first-class stack gets stack-aware task templates: "run the Prisma migration" 
 3. List it under "Questions added" in `CHANGELOG.md` for the next version. The regenerate step reads that list to ask only the new questions of an older intake.
 4. Update the three fixtures.
 
+## Checks
+
+CI runs three model-free checks on every pull request and every push to `main`; run the first two locally before opening a pull request:
+
+```
+pip install pyyaml
+python scripts/check_frontmatter.py
+python scripts/check_references.py
+```
+
+- `check_frontmatter.py` treats the blank form's frontmatter as the schema and validates every fixture against it: same keys, the plugin's version, the required-field rules from `skills/kickoff/reference/checks.md` (mirrored in the script; change both), every `conventions` field set, and a real answer on every required body question.
+- `check_references.py` checks that every path `SKILL.md` names exists, that each task template set is complete, that `templates/docs/` holds exactly the build's documents, that no template uses a retired placeholder form, and that the manifests and changelog agree.
+- Markdown lint runs in CI through `markdownlint-cli2`, configured in `.markdownlint-cli2.jsonc`. Rules the templates would trip by design are off there, with a reason each.
+
+The skill itself is never run in CI; that is the fixture runs, by hand, above.
+
 ## Release checklist
 
 - Bump `version` in `.claude-plugin/plugin.json` and add the version heading in `CHANGELOG.md`.

@@ -55,6 +55,10 @@ The first run asks everything. At the end it offers to save the answers that rar
 
 Every stack works. One stack gets task templates with concrete commands rather than generic ones: TypeScript with Next.js or Express, Prisma, and PostgreSQL. Adding another is the main way to contribute; see `CONTRIBUTING.md`.
 
+## Works with ECC, never needs it
+
+[ECC](https://github.com/affaan-m/ECC) is a bundle of rules, skills, and commands for Claude Code. When kickoff finds it installed, the runbook gains one step, running ECC's `/project-init` to install the rules for the chosen stack, and the generated tasks suggest ECC skills where they fit. Without it, nothing is missing: every task reads complete on its own, and the runbook simply has one step fewer. The same goes for any other skills on your machine; kickoff detects what is there and suggests only what fits the project.
+
 ## Commitments
 
 - No network calls. No telemetry.

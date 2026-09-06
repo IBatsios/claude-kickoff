@@ -1,8 +1,8 @@
 # Handoff — verification complete
 
 **Date:** 2026-09-05
-**Phase finished:** plugin scaffold, three fixture runs, four fix rounds, re-runs of every fixture, both invocation paths run through `/kickoff` as typed with every finding applied and confirmed, and the no-ECC smoke run on a clean profile
-**Next phase:** CI for this repo and release preparation
+**Phase finished:** plugin scaffold, three fixture runs, four fix rounds, re-runs of every fixture, both invocation paths run through `/kickoff` as typed with every finding applied and confirmed, the no-ECC smoke run on a clean profile, and CI for this repo
+**Next phase:** release preparation
 
 ## Where things stand
 
@@ -15,14 +15,14 @@
 - The build-from-file path has also been run as typed, in `~/Documents/Projects/kickoff-test-2` with the ts-default intake copied in: Confirm then Build with no questions asked, the filtered skills list at confirm, every expected file, one commit on `main`. Six findings in `fixtures/typed-run-build-from-file-2026-09-05.md`, all applied: fixture intakes now set every `conventions` field, the defaults offer is its own structured prompt with keep-my-defaults first for placeholder values, generated files are written with the file-writing tool, the mode line names the directory, the skills filter reads Section 11, and the 8.11 row is D2. A confirming typed run in `~/Documents/Projects/kickoff-test-3` then showed every one of those in effect; it is the last section of that log.
 - The no-ECC smoke run is done and passes: `CLAUDE_CONFIG_DIR` pointed at an empty directory, the skill (which now follows that variable) saw no skills and no defaults file, the runbook had no ECC step, no task carried a suggested-skills line, and the defaults file was written into the throwaway profile. Log: `fixtures/smoke-run-no-ecc-2026-09-05.md`, with two candidate improvements, not applied: warn when the intake's OS differs from the machine, and offer "save all except os and shell" in that case. The throwaway folders `kickoff-smoke-profile` and `kickoff-test-4` can be deleted.
 - `~/.claude/kickoff/defaults.yaml` exists on this machine, written by the first typed run. The next walkthrough here will pre-select from it.
+- CI is in place at `.github/workflows/ci.yml`: `scripts/check_frontmatter.py` (the blank form's frontmatter as the schema, every fixture validated against it and against the required-field rules, every conventions field set, real answers on required body questions), `scripts/check_references.py` (every path SKILL.md names exists, task sets complete, `templates/docs/` exact, no retired placeholder forms, manifests and changelog agree), and markdownlint with `.markdownlint-cli2.jsonc`. Both scripts pass locally and were shown to fail on five deliberately broken inputs. The lint step has only ever run in CI's configuration, never locally, since markdownlint is not installed here; expect to tune a rule or two on the first push.
 - `README.md` names the GitHub owner, `IBatsios`. The `claude-kickoff` repo does not exist there yet.
 
 ## What to do next, in order
 
-1. **CI for this repo**: a GitHub Actions workflow that runs a markdown linter, validates the frontmatter of the blank form and the three fixtures against the key list in `reference/checks.md`, and checks that every path `SKILL.md` names exists. No model calls.
-2. **Hand-write this repo's own intake and docs** in the same shapes, as the reference example of the output. Optional; the fixture outputs already serve as examples and could be checked in under `fixtures/<name>/example/` instead.
-3. **Create the `claude-kickoff` repo** under `IBatsios` on GitHub, push the branch, open the first pull request, tag `v0.1.0`, and add the version heading in `CHANGELOG.md`.
-4. First live run on Yanni's next real app.
+1. **Hand-write this repo's own intake and docs** in the same shapes, as the reference example of the output. Optional; the fixture outputs already serve as examples and could be checked in under `fixtures/<name>/example/` instead.
+2. **Create the `claude-kickoff` repo** under `IBatsios` on GitHub, push the branch, open the first pull request, tag `v0.1.0`, and add the version heading in `CHANGELOG.md`.
+3. First live run on Yanni's next real app.
 
 ## Things to watch for when running
 

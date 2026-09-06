@@ -1,6 +1,6 @@
 # Checks
 
-Run every check here before a build. Section numbers refer to the intake form. The runtime copy of the rules in the repo's `docs/question-bank.md`; keep the two in step.
+Run every check here before a build. Section numbers refer to the intake form. The runtime copy of the rules in the repo's `docs/question-bank.md`; keep the two in step. The required-field rules are also mirrored in the repo's `scripts/check_frontmatter.py`, which CI runs against the fixtures; a change here changes that script too.
 
 ## Required fields
 
