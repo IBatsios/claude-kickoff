@@ -26,7 +26,7 @@ Read the file. For each eligible field, the saved value is the first option offe
 
 ## The offer at the end of a build
 
-Compare the intake's eligible fields to the file (or to nothing, when there is no file). When any differ, show them as a short list, old value to new value, and ask one question: save these as your defaults? Yes writes the file, merging over what was there. No leaves the file untouched. Ask once; never write without the yes.
+Compare the intake's eligible fields to the file (or to nothing, when there is no file). When any differ, send a message of its own, separate from the build report: a table of the differing fields, saved value beside intake value, then the structured prompt with two options, save these as my defaults or keep my saved defaults. When any differing value looks like a placeholder (an owner or domain containing `example`, a fixture's name), keep-my-saved-defaults is the first option and the message says why. Saving writes the file, merging over what was there. Keeping leaves it untouched. Ask once; never write without the answer. When the user corrects a wrong answer in the next message ("I meant no"), restore the previous values exactly and say so.
 
 ## Hand edits
 

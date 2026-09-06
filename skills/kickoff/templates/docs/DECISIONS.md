@@ -8,7 +8,7 @@ One line per decision. Newest at the bottom. Reasons come from the intake; where
 | # | Decision | Why | Source |
 |---|---|---|---|
 | D1 | Stack: {{language}}, {{frontend}}, {{backend}}, {{database}} with {{data_layer}}, {{styling}}, tests with {{tests}}, {{package_manager}} | chosen in intake | Section 8 |
-<!-- One row when 8.11 is answered; it holds must-use and must-avoid notes, not a reason for D1. -->
+<!-- One row when 8.11 is answered, as D2 directly after D1; the rest renumber from D3. It holds must-use and must-avoid notes, not a reason for D1. A convention row whose value came from the defaults file rather than the intake says "intake left blank; from defaults" in the Why column. -->
 | D{{n}} | Must use: {{8.11}} | chosen in intake | Section 8 |
 <!-- D2 for local only reads "Code lives locally, no remote yet, {{visibility}}". D3 for local only reads "Runs locally only; no deployment". D4 only when stack.database is not none. -->
 | D2 | Code lives on {{git.host}}{{, at host_url}}, {{visibility}}{{, licensed license}} | {{"chosen in intake"}} | Section 9 |

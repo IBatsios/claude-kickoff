@@ -29,6 +29,6 @@ A first-class stack gets stack-aware task templates: "run the Prisma migration" 
 ## Release checklist
 
 - Bump `version` in `.claude-plugin/plugin.json` and add the version heading in `CHANGELOG.md`.
-- Run all three fixtures by hand and compare against their expected file lists.
+- Run all three fixtures by hand and compare against their expected file lists. Every fixture intake sets every `conventions` field explicitly, so a run never depends on the machine's `~/.claude/kickoff/defaults.yaml`; keep it that way when adding one.
 - Run one fixture on a profile with no `~/.claude/kickoff/defaults.yaml` and no other skills installed.
 - Tag the commit with the version.

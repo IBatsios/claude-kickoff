@@ -41,13 +41,13 @@ deployment:
   domain: ""
   environments: []
 
-conventions:
-  protect_default_branch:
-  branch_prefixes: []
-  commit_style:
-  env_example:
-  db_backup_before_migrate:
-  handoff_docs:
+conventions:                 # set explicitly so the fixture does not depend on the machine's defaults file
+  protect_default_branch: true
+  branch_prefixes: ["feature", "fix", "chore"]
+  commit_style: "conventional"
+  env_example: true
+  db_backup_before_migrate: true
+  handoff_docs: false
 ---
 
 # Intake: tidy

@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-05
 **Phase finished:** plugin scaffold, three fixture runs, three fix rounds, a re-run of every fixture against the fixed templates, and the first run through `/kickoff` as typed
-**Next phase:** a typed run of the build-from-file path, the no-ECC smoke run, CI for this repo, and release preparation
+**Next phase:** one confirming typed run, the no-ECC smoke run, CI for this repo, and release preparation
 
 ## Where things stand
 
@@ -12,12 +12,13 @@
 - The fixture runs were done by an agent following the skill in this session, not through an installed plugin.
 - `/kickoff` has now been run once as typed, with the plugin loaded from this repo: Refuse mode in this directory, then a full walkthrough in an empty directory (`~/Documents/Projects/kickoff-test`, kept outside the repo), confirm, build with `ts-prisma-postgres`, one commit, and the defaults file written. Everything in `expected-files.md` came out. `fixtures/typed-run-2026-09-05.md` holds the log: eight findings, the worst being that the build leaves no `main` branch, so the runbook's first pull request has no target.
 - All ten findings from the re-runs and the typed run are applied, and all three fixtures have been re-run against them and pass. The two design calls went: the scaffold commit lands on `main` and Task 01 opens the first branch; optional sections carry proposed answers so one word accepts them. Each run log has a "Second re-run" section. One observation is logged and not applied: the DECISIONS row for 8.11 is labeled "Must use:", which overstates a note like "standard library only if possible".
-- `~/.claude/kickoff/defaults.yaml` now exists on this machine, written by that run. The next walkthrough here will pre-select from it; the no-ECC smoke run must use a profile without it.
+- The build-from-file path has also been run as typed, in `~/Documents/Projects/kickoff-test-2` with the ts-default intake copied in: Confirm then Build with no questions asked, the filtered skills list at confirm, every expected file, one commit on `main`. Six findings in `fixtures/typed-run-build-from-file-2026-09-05.md`, all applied: fixture intakes now set every `conventions` field, the defaults offer is its own structured prompt with keep-my-defaults first for placeholder values, generated files are written with the file-writing tool, the mode line names the directory, the skills filter reads Section 11, and the 8.11 row is D2.
+- `~/.claude/kickoff/defaults.yaml` now exists on this machine, written by the first typed run. The next walkthrough here will pre-select from it; the no-ECC smoke run must use a profile without it.
 - `README.md` names the GitHub owner, `IBatsios`. The `claude-kickoff` repo does not exist there yet.
 
 ## What to do next, in order
 
-1. **Run a fixture through `/kickoff` as typed** to exercise the build-from-file path: `docs/intake.md` complete, no walkthrough, the skills list shown at confirm. Use `fixtures/ts-default`. The typed run so far covered only the walkthrough path.
+1. **Re-run ts-default as typed once more**, in a fresh empty folder with the updated fixture intake, to confirm the handoff doc no longer appears on this machine and the defaults offer arrives as its own structured prompt. Ten minutes; answer yes, then keep-my-defaults.
 2. **Smoke run without ECC and without a defaults file**: a profile with no `~/.claude/kickoff/defaults.yaml` and no `project-init` command anywhere. The runbook must have no ECC step and every task must read complete with no suggested-skills line. Use `fixtures/local-only`.
 3. **CI for this repo**: a GitHub Actions workflow that runs a markdown linter, validates the frontmatter of the blank form and the three fixtures against the key list in `reference/checks.md`, and checks that every path `SKILL.md` names exists. No model calls.
 4. **Hand-write this repo's own intake and docs** in the same shapes, as the reference example of the output. Optional; the fixture outputs already serve as examples and could be checked in under `fixtures/<name>/example/` instead.
